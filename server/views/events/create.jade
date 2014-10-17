@@ -1,0 +1,52 @@
+extends ../shared/layout
+block main-content
+    .container
+        form(method="post")
+            input(type="hidden" value = "currentUser.username" name="creatorName")
+            input(type="hidden" value = "12345" name="creatorPhone")
+            label Title
+            input(class="form-control" name = "title" )
+            label Description
+            input(class="form-control" name = "description" )
+            br
+            label Date
+            br
+            input(type="text" id="datepicker" name="date")
+            br
+            label Latitude
+            input(class="form-control" name = "location.latitude" )
+            label Longitude
+            input(class="form-control" name = "location.longitude" )
+            br
+            input(id = "add-category" type="button" value = "Add Category" )
+            br
+            label Category:
+            select(id = "categories" name="categories")
+                each category in categories
+                    option #{category}
+            br
+            br
+            input(id = "add-initiative" type="button" value = "Add Initiative" )
+            br
+            label Initiatives:
+            select(id = "initiatives" name="type.initiatives")
+                each initiative in initiatives
+                    option #{initiative}
+            br
+            br
+            input(id = "add-seasons" type="button" value = "Add Seasons" )
+            br
+            label Season:
+            select(id = "seasons" name = "type.seasons")
+                    each season in seasons
+                        option #{season}
+            br
+            br
+            input(type="submit" class="btn btn-lg" value="Create Trip")
+block page-scripts
+    script(src="js/addMoreCategories.js")
+    script(src="js/addMoreInitiatives.js")
+    script(src="js/addMoreSeasons.js")
+    script(src="js/dateTimePicker.js")
+    script(src="lib/jquery-ui-1.11.1/jquery-ui.js")
+    link(rel="stylesheet" href="lib/jquery-ui-1.11.1/jquery-ui.css")

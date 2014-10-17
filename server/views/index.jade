@@ -1,0 +1,15 @@
+extends shared/layout
+block main-content
+    h1 Welcome to Telerik Event System
+    table.table.table-bordered
+        tr
+            th Event
+            th Desciption
+            th Creator
+            th Date
+        each event in events
+            tr
+                td #{event.title}
+                td #{event.description}
+                td #{event.creatorName}
+                td #{event.date}

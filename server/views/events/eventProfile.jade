@@ -1,0 +1,30 @@
+extends ../shared/layout
+block main-content
+    .container
+        table.table.table-bordered
+            tr
+                th Title
+                th Desciption
+                th Date
+                th Creator Name
+                th Creator Phone
+                th Seasons
+                th Initiatives
+                th Categories
+                th Latitude
+                th Longitude
+            tr
+                td #{event.title}
+                td #{event.description}
+                td #{event.date}
+                td #{event.creatorName}
+                td #{event.creatorPhone}
+                td #{event.type.seasons}
+                td #{event.type.initiatives}
+                td #{event.categories}
+                td #{event.location.latitude}
+                td #{event.location.longitude}
+        input(type="button" id="join-event" value="Join Event")
+block page-scripts
+    script(src="/js/joinEvent.js")
+    script(src = "/js/httpRequester.js")
